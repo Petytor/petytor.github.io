@@ -5,7 +5,7 @@ export const tworca = {
   nazwa: 'TODO',
   // Krótka notka o Tobie — 2-3 zdania, widoczne w sekcji "O mnie" niżej na stronie.
   bio: 'TODO — kilka zdań o tym, kim jesteś i dlaczego robisz projekty takie jak ten.',
-  linkKawa: 'https://buycoffee.to/TODO',
+  linkKawa: 'https://suppi.pl/mleczakm',
   linkInneProjekty: 'https://TODO',
   // Opcjonalnie: link do Twojego profilu GitHub, jeśli chcesz go pokazać osobno.
   linkGithub: 'https://github.com/mleczakm',
