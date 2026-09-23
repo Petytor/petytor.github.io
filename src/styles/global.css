@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+/* Te same kolory marki co w jawna-sprawa — spójność w całej rodzinie projektów organizacji. */
+@theme {
+  --color-brand: #0d5c63;
+  --color-brand-dark: #083c41;
+  --color-brand-accent: #e8a33d;
+}

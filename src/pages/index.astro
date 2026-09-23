@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { tworca } from '../site.config';
+
+const TEMPLATE_REPO = 'https://github.com/petytor/jawna-sprawa';
+const GENERATE_URL = `${TEMPLATE_REPO}/generate`;
+
+const kroki = [
+  {
+    tytul: 'Wygeneruj repozytorium',
+    opis: 'Kliknij przycisk niżej, wpisz nazwę (np. "moja-sprawa") i zostaw ją publiczną.',
+  },
+  {
+    tytul: 'Poczekaj chwilę',
+    opis: 'Repo samo się skonfiguruje — nie musisz edytować żadnego pliku.',
+  },
+  {
+    tytul: 'Podepnij Cloudflare Pages',
+    opis: '„Connect to Git”, zaloguj GitHubem, wybierz swoje repo, „Save and Deploy”.',
+  },
+  {
+    tytul: 'Załóż konto Decap Turbo',
+    opis: 'Darmowe, logowanie GitHubem — to Twój panel do logowania się do edycji.',
+  },
+  {
+    tytul: 'Zaloguj się na /admin',
+    opis: 'Na adresie swojej strony, np. twoja-nazwa.pages.dev/admin.',
+  },
+  {
+    tytul: 'Gotowe',
+    opis: 'Dodawaj wnioski w panelu — każdy zapisany to commit w Twoim repozytorium.',
+  },
+];
+
+const funkcje = [
+  ['Podgląd dokumentu', 'Główny dokument sprawy (PDF, skan) osadzony wprost na stronie.'],
+  ['Oś czasu ze statusami', 'Złożony, oczekiwanie na odpowiedź, oczekiwanie na odwołanie, załatwiony, odrzucony.'],
+  ['Terminy per status', 'Każdy krok może mieć własny termin w dniach — oś czasu sama pokazuje, co jest po terminie.'],
+  ['Statystyki zbiorcze', 'Liczba wniosków, w toku, zakończonych, po terminie — na stronie głównej.'],
+  ['Pomoc w anonimizacji', 'Ostrzeżenie w panelu edycji przed publikacją PESEL-u, telefonu, adresu.'],
+  ['SEO i LLM od razu', 'Mapa strony, dane strukturalne, llms.txt, jawnie dopuszczone boty AI.'],
+];
+---
+
+<Layout
+  title="petytor — jawnie dokumentuj swoją sprawę z urzędem"
+  description="Darmowy szablon strony do jawnego dokumentowania sprawy z urzędem: dokument, oś czasu, terminy i statystyki. Bez własnego serwera, bez pisania kodu."
+>
+  <main class="mx-auto max-w-3xl px-4 py-16">
+    <header class="text-center">
+      <p class="text-sm font-medium uppercase tracking-wide text-brand-accent">petytor</p>
+      <h1 class="mt-2 text-4xl font-bold text-brand-dark">Jawnie dokumentuj swoją sprawę z urzędem</h1>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-slate-600">
+        <strong>jawna-sprawa</strong> to darmowy szablon strony: dokument do podglądu, oś czasu statusów
+        z terminami i statystyki — wszystko publiczne, bez własnego serwera i bez pisania kodu.
+      </p>
+      <a
+        class="mt-8 inline-block rounded-full bg-brand px-8 py-3 font-semibold text-white hover:bg-brand-dark"
+        href={GENERATE_URL}
+      >
+        Załóż swoją stronę za darmo →
+      </a>
+      <p class="mt-2 text-sm text-slate-400">Potrzebujesz tylko darmowego konta GitHub. Ok. 5 minut.</p>
+    </header>
+
+    <section class="mt-20">
+      <h2 class="text-center text-2xl font-bold text-brand-dark">Jak to wyklikać</h2>
+      <ol class="mt-8 space-y-6">
+        {
+          kroki.map((krok, i) => (
+            <li class="flex gap-4">
+              <span class="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-brand font-bold text-white">
+                {i + 1}
+              </span>
+              <div>
+                <p class="font-semibold text-slate-800">{krok.tytul}</p>
+                <p class="text-slate-600">{krok.opis}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="mt-20">
+      <h2 class="text-center text-2xl font-bold text-brand-dark">Co dostajesz</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        {
+          funkcje.map(([tytul, opis]) => (
+            <div class="rounded-lg border border-slate-200 p-4">
+              <p class="font-semibold text-brand-dark">{tytul}</p>
+              <p class="mt-1 text-sm text-slate-600">{opis}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="mt-8 text-center">
+        <a class="text-brand hover:underline" href={TEMPLATE_REPO}>
+          Pełna dokumentacja techniczna w repozytorium jawna-sprawa →
+        </a>
+      </p>
+    </section>
+
+    <section class="mt-24 border-t border-slate-200 pt-12 text-center">
+      <h2 class="text-2xl font-bold text-brand-dark">O mnie</h2>
+      <p class="mx-auto mt-4 max-w-xl text-slate-600">{tworca.bio}</p>
+      <p class="mt-6 font-medium text-slate-700">{tworca.nazwa}</p>
+      <div class="mt-4 flex justify-center gap-4 text-sm">
+        <a class="text-brand underline hover:text-brand-dark" href={tworca.linkKawa} rel="noopener">
+          ☕ Postaw kawę
+        </a>
+        <a class="text-brand underline hover:text-brand-dark" href={tworca.linkInneProjekty} rel="noopener">
+          Inne projekty
+        </a>
+        <a class="text-brand underline hover:text-brand-dark" href={tworca.linkGithub} rel="noopener">
+          GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
