@@ -183,6 +183,34 @@ h1, h2, h3, p { margin-top: 0; }
   .feature-card:nth-child(4) { border-top: 1px solid #dfe3d9; }
   .feature-card { min-height: 207px; }
 }
+@media (min-width: 901px) {
+  .header-nav { font-size: 15px; }
+  .eyebrow { font-size: 11px; }
+  .hero-lede { max-width: 560px; font-size: 18px; }
+  .button { font-size: 15px; }
+  .text-link { font-size: 14px; }
+  .hero-meta { gap: 22px; font-size: 12px; }
+  .hero-privacy { max-width: 500px; font-size: 12px; }
+  .trust-inner { font-size: 12px; }
+  .trust-inner p { font-size: 10px; }
+  .section-intro > p, .setup-heading > p { max-width: 390px; font-size: 16px; }
+  .feature-card { min-height: 260px; }
+  .feature-card h3 { font-size: 21px; }
+  .feature-card p { max-width: 260px; font-size: 14px; line-height: 1.7; }
+  .privacy-note p, .privacy-note a { font-size: 13px; }
+  .privacy-icon { width: 24px; height: 24px; font-size: 15px; }
+  .cost-note p { font-size: 14px; }
+  .why-copy > p:not(.eyebrow) { font-size: 16px; }
+  .why-copy > a { font-size: 14px; }
+  .setup-step h3 { font-size: 23px; }
+  .setup-step p { max-width: 340px; min-height: 105px; font-size: 14px; line-height: 1.75; }
+  .step-note { font-size: 10px; }
+  .setup-bottom p { font-size: 13px; }
+  .button-light { font-size: 13px; }
+  .final-cta .eyebrow { font-size: 10px; }
+  .final-cta h2 { font-size: 31px; }
+  .footer-inner p, .footer-inner > a:last-child { font-size: 12px; }
+}
 @media (max-width: 640px) {
   .wrap { width: calc(100% - 36px); }
   .site-header { height: 76px; }
